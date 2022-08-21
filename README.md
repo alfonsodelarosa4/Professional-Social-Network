@@ -1,4 +1,4 @@
-# Professional Social Network
+# Professional Social Network (React/Redux/Node.js/FirebaseDB)
 
 ## Overview
 - This is a social media website (similar to LinkedIn). This project allows users to create an account and create posts. This posts can be text posts, images, and video links to YouTube. (Features are explained in more detail below)
