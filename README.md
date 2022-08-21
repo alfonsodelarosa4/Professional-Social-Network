@@ -20,14 +20,15 @@ yarn start
 
 ### Google Authentication (Sign in with Google Account)
 - Users of the application are able to sign in with a Google Account
-
+![](https://github.com/alfonsodelarosa4/Professional-Social-Network/blob/main/demo_gifs/Google%20Auth.gif)
 
 ### Share Image
 - Users are able to share an image with a description
+![](https://github.com/alfonsodelarosa4/Professional-Social-Network/blob/main/demo_gifs/Share%20Image.gif)
 
+### Share Video Link
+- Users are able to share a video link with a description
+![](https://github.com/alfonsodelarosa4/Professional-Social-Network/blob/main/demo_gifs/Share%20Video%20Link.gif)
 
 ## How Fullstack project works
 - Users are able to share a video link with a description
-
-
-## Process
