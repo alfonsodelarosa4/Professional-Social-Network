@@ -6,14 +6,14 @@
 - This project also utilizes Redux to manage the data in the store.
 
 ## Requirements
-[] Firebase database needs to be active prior to deployment.
+- [ ] Firebase database needs to be active prior to deployment.
 
 ## Setup and Run
-clone repository to your computer
+- clone repository to your computer
 ```
 git clone https://github.com/alfonsodelarosa4/Professional-Social-Network.git
 ```
-run project
+- run project
 ```
 yarn start
 ```
