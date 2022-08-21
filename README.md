@@ -30,5 +30,7 @@ yarn start
 - Users are able to share a video link with a description
 ![](https://github.com/alfonsodelarosa4/Professional-Social-Network/blob/main/demo_gifs/Share%20Video%20Link.gif)
 
-## How Fullstack project works
-- Users are able to share a video link with a description
+## How Redux works for the project
+- The web application maintains a store via Redux. For each modification of the Firebase database, the store is also modified.
+![](https://d33wubrfki0l68.cloudfront.net/01cc198232551a7e180f4e9e327b5ab22d9d14e7/b33f4/assets/images/reduxdataflowdiagram-49fa8c3968371d9ef6f2a1486bd40a26.gif)
+
