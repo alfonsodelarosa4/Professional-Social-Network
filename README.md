@@ -9,10 +9,12 @@
 [] Firebase database needs to be active prior to deployment.
 
 ## Setup and Run
+clone repository to your computer
 ```
-// clone repository to your computer
-git clone
-// run project
+git clone https://github.com/alfonsodelarosa4/Professional-Social-Network.git
+```
+run project
+```
 yarn start
 ```
 
