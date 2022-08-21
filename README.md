@@ -7,13 +7,14 @@
 
 ## Requirements
 - Firebase database needs to be active prior to deployment.
+- The file for the Firebase keys is also missing.
 
 ## Setup and Run
-- clone repository to your computer
+1. clone repository to your computer
 ```
 git clone https://github.com/alfonsodelarosa4/Professional-Social-Network.git
 ```
-- run project
+2. run project
 ```
 yarn start
 ```
