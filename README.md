@@ -11,13 +11,13 @@
 
 ## Setup and Run
 1. clone repository to your computer
-```
-git clone https://github.com/alfonsodelarosa4/Professional-Social-Network.git
-```
+  ```
+  git clone https://github.com/alfonsodelarosa4/Professional-Social-Network.git
+  ```
 2. run project
-```
-yarn start
-```
+  ```
+  yarn start
+  ```
 
 ## Features
 
