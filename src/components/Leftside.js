@@ -10,7 +10,7 @@ const Leftside = (props) => {
           <a>
           <User>
               <a>
-                { props.user && props.user.photoURL ? ( <img src={props.user.photoURL} alt="" /> ) : ( <img src="/images/user.svg" alt="" /> )}
+                { props.user && props.user.photoURL ? ( <img src={props.user.photoURL} alt="" onError={(e)=>{e.target.onerror = null; e.target.src="/images/blank-profile.png"}}/> ) : ( <img src="/images/blank-profile.png" alt="" /> )}
               </a>
             </User>
             <Link>Welcome, {props.user ? props.user.displayName : "there"}!</Link>

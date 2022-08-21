@@ -2,7 +2,7 @@ import { auth, provider, storage } from "../firebase";
 import db from "../firebase"
 import { SET_USER, SET_LOADING_STATUS, GET_ARTICLES } from "./actionType";
 
-// functions that update or receive values from database
+// functions that update values in store or receive values from database to store
 export const setUser = (payload) => ({
     type: SET_USER,
     user: payload,

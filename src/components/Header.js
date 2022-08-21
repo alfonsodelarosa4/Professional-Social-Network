@@ -26,7 +26,7 @@ const Header = (props) => {
         
         <Section>
             <h5>
-              <a>Welcome to Alfonso's Social Network! Feel free to post any images or share videos</a>
+              Welcome to Alfonso's Social Network! Feel free to post any images or share YouTube videos
             </h5>
 
           </Section>
@@ -39,10 +39,10 @@ const Header = (props) => {
             
             {/* Nav icons */}
             <NavList className="active">
-              <a>
-                <img src="/images/nav-home.svg" alt="" />
+              <div>
+                <img className="mx-auto" src="/images/nav-home.svg" alt="" />
                 <span>Home</span>
-              </a>
+              </div>
             </NavList>
 
             {/* <NavList>
@@ -74,15 +74,15 @@ const Header = (props) => {
             </NavList> */}
 
             <User>
-              <a>
-                { props.user && props.user.photoURL ? ( <img src={props.user.photoURL} alt="" /> ) : ( <img src="/images/user.svg" alt="" /> )}
+              <div className="">
+                { props.user && props.user.photoURL ? ( <img src={props.user.photoURL} alt="" onError={(e)=>{e.target.onerror = null; e.target.src="/images/blank-profile.png"}}/> ) : ( <svg src="/images/blank_profile.png" alt="" /> )}
                 <span>Me</span>
-                <img src="/images/down-icon.svg" alt="" />
-              </a>
-
-              <SignOut onClick={() => props.signOut()} >
-                <a>Sign Out</a>
+                <SignOut onClick={() => props.signOut()} >
+                <div>Sign Out</div>
               </SignOut>
+              </div>
+
+              
             </User>
 
             <Work>
@@ -100,6 +100,8 @@ const Header = (props) => {
     </Container>
   );
 };
+
+
 
 // contains the entire header
 const Container = styled.div`
@@ -232,7 +234,7 @@ const NavListWrap = styled.ul`
 const NavList = styled.li`
   display: flex;
   align-items: center;
-  a {
+  div {
     align-items: center;
     background: transparent;
     display: flex;
@@ -241,7 +243,7 @@ const NavList = styled.li`
     font-weight: 400;
     justify-content: center;
     line-height: 1.5;
-    min-height: 52px;
+    min-height: 12px;
     min-width: 80px;
     position: relative;
     text-decoration: none;
@@ -261,7 +263,7 @@ const NavList = styled.li`
   // cursor hover and item is active
   &:hover,
   &:active {
-    a {
+    div {
       span {
         color: rgba(0, 0, 0, 0.9);
       }
@@ -270,7 +272,7 @@ const NavList = styled.li`
 `;
 
 const SignOut = styled.div`
-  position: absolute;
+  /* position: absolute;
   top: 45px;
   background: white;
   border-radius: 0 0 5px 5px;
@@ -279,16 +281,22 @@ const SignOut = styled.div`
   font-size: 16px;
   transition-duration: 167ms;
   text-align: center;
-  display: none;
+  display: none; */
+  // cursor hover and item is active
+  color: rgba(0, 0, 0, 0.6);
+  &:hover,
+  &:active {
+    color: rgba(0, 0, 0, 0.9);
+  }
 `;
 
 const User = styled(NavList)`
-  a > svg {
+  div > svg {
     width: 24px;
     border-radius: 50%;
   }
 
-  a > img {
+  div > img {
     width: 24px;
     height: 24px;
     border-radius: 50%;

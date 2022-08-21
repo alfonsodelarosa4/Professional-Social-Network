@@ -1,3 +1,7 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
 body {
   /* allows us to see the bar */
   overflow-y: scroll;

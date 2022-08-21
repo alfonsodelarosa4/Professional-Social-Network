@@ -103,14 +103,16 @@ const PostModal = (props) => {
                                 name="image" id="file" style={{ display:"none" }}
                                 onChange={handleChange}
                                 />
-                            <p>
-                                <label htmlFor="file">Click here to upload image</label>
-                            </p>
+                            <AssetButton>
+<label htmlFor="file">Click here to upload image</label>
+                            </AssetButton>
+                                
+                            
                             {shareImage && ( <img src= {URL.createObjectURL(shareImage)  } /> )}
                             </UploadImage>
                         ) : (
                             assetArea === "media" && (
-                            <>
+                            <ShareLink>
                                 <input type="text" placeholder="Please input a video link"
                                 value={videoLink}
                                 onChange={(e) => setVideoLink(e.target.value)}
@@ -119,7 +121,7 @@ const PostModal = (props) => {
                                 {videoLink && (
                                     <ReactPlayer width={'100%'} url={videoLink} />
                                 )}
-                            </>
+                            </ShareLink>
                         )
                         )
                         }
@@ -133,11 +135,13 @@ const PostModal = (props) => {
                                 Video
                             </AssetButton>
                         </AttachAssets>
-                        
+
+                        <div>
                         <PostButton  disabled={!editorText ? true: false} 
                         onClick={(event) => postArticle(event)}>
                             Post
                         </PostButton>
+                        </div>
                     </ShareCreation>
                 </Content>
             </Container>)
@@ -193,7 +197,7 @@ const SharedContent = styled.div `
     overflow-y: auto;
     vertical-align: baseline;
     background: transparent;
-    padding: 8px 12px;
+    padding: 0px 10px;
 
 `;
 
@@ -220,31 +224,43 @@ const UserInfo = styled.div `
 const ShareCreation = styled.div `
     display: flex;
     justify-content: space-between;
-    padding: 12px 24px 12px 16px;
+    padding: 0px 24px 12px 24px;
 `;
 
 
 
 const AssetButton = styled.button `
-    display: flex;
-    align-items: center;
-    height: 40px;
+    /* display: flex; */
+    /* align-items: center; */
+    /* height: 35px; */
 
-    min-width: 60px;
+    /* min-width: 60px; */
+    width: auto;
 
-    background: "rgba(0,0,0,0.8)";
-    color: "rgba(1,1,1,0.2)";
+    display:inline-block;
+    padding: 8px 20px;
+    border: none;
+    border-radius: 5px;
+
+
+    font-weight: bold;
+
+    background-color: rgba(61, 159, 247, 1);
+    color: white;
     &:hover {
-        background: "rgba(0,0,0,0.08)";
+        color: rgba(61, 159, 247, 1);
+        background-color: white ;
     }
 `;
 
 const AttachAssets = styled.div `
     align-items: center;
     display: flex;
-    padding-right: 8px;
+    flex-wrap: wrap;
+    column-gap: 1rem;
+    /* padding-right: 8px; */
     ${AssetButton} {
-        width: 40px;
+        /* width: 40px; */
     }
 `;
 
@@ -260,33 +276,48 @@ const ShareComment = styled.div `
 `;
 
 const PostButton = styled.button `
-    min-width: 60px;
-    //padding-left: 16px;
+padding: 8px 20px;
+    font-size: 16px;
+    border: none;
+    background-color: rgba(61, 159, 247, 1);
+    color: white;
+    &:hover {
+        color: rgba(61, 159, 247, 1);
+        background-color: white ;
+    }
+    border-radius: 5px;
+
+font-weight: bold;
 `;
 
 const Editor = styled.div `
-    padding: 12px 24px;
+    padding: 6px 24px;
     textarea {
         width: 100%;
         min-height: 100px;
         resize: none;
+        border-radius: 7px;
     }
 
     input {
         width: 100%;
         height: 35px;
         font-size: 16px;
-        margin-bottom: 20px;
-
+        /* margin-bottom: 20px; */
     }
 `;
 
 const UploadImage = styled.div`
     text-align: center;
+    margin: 10px 0px;
     img {
         width: 100%;
     }
 `;
+
+const ShareLink = styled.div`
+margin: 10px auto;
+`
 
 const mapStateToProps = (state) => {
     return {

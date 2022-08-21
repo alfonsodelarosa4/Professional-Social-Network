@@ -40,10 +40,10 @@ const Main = (props) => {
           {/*
             ** Renders the post component and handles click to show post modal
           */}
-          <ShareBox>Share 
+          <ShareBox> 
             <div>
               { props.user && props.user.photoURL ?
-                (<img src = {props.user.photoURL} />)
+                (<img src = {props.user.photoURL} alt="" onError={(e)=>{e.target.onerror = null; e.target.src="/images/blank-profile.png"}}/>)
                 :
                 (<img src="/images/user.svg" alt="" />)
               }
@@ -85,7 +85,7 @@ const Main = (props) => {
         (
           <Content>
             {/* ** loads loading animation */}
-            { props.loading && <img src={'./images/spin-loader.svg'} /> }
+            { props.loading && <svg src={'/images/spin-loader.svg'} alt=""/> }
             {/* renders each article with their components */}
             {props.articles.length > 0 && props.articles.map((article, key) => 
             (
@@ -93,7 +93,7 @@ const Main = (props) => {
               {/* USER INFORMATION */}
               <SharedActor>
                 <a>
-                  <img src={article.actor.image} alt="" />
+                  <img src={article.actor.image} alt="" onError={(e)=>{e.target.onerror = null; e.target.src="/images/blank-profile.png"}} />
                   <div>
                     <span>{article.actor.title}</span>
                     {/* <span>{article.actor.description}</span> */}
@@ -119,7 +119,7 @@ const Main = (props) => {
 
                   (
                     
-                    article.shareImg && <img src={article.shareImg} />
+                    article.shareImg && <img src={article.shareImg} alt="" />
                   )
                   }
                 </a>
@@ -367,7 +367,7 @@ const SocialActions = styled.div`
 
 const Content = styled.div`
   text-align: center;
-  & > img {
+  & > svg {
     width: 30px;
   }
 `;
